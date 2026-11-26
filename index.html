@@ -466,6 +466,11 @@
   }
   .member .doc-link:hover{background:var(--navy);color:#fff;border-color:var(--navy);text-decoration:none}
   .member .doc-link .doc-icon{font-family:var(--serif);font-weight:900;font-size:11px;padding:2px 5px;background:var(--accent);color:#fff;border-radius:2px}
+  .member .doc-link.pending,
+  .member .doc-link.pending:hover{background:transparent;color:var(--muted);border-color:var(--rule);cursor:default}
+  .grad-head{font-size:21px;margin:0 0 6px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .grad-head span{font-family:var(--sans);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--accent-2);padding:4px 9px;border-radius:2px}
+  .grad-note{font-size:14.5px;color:var(--muted);margin:0 0 22px}
 
   /* ================= PHOTO GALLERY ================= */
   .gallery-grid{
@@ -762,6 +767,24 @@
           </div>
         </article>
       </div>
+      <div class="ml-focus" id="processing-focus">
+        <h3 style="font-size:24px;margin-bottom:10px">Polymer Processing Focus</h3>
+        <p class="sec-lead" style="font-size:15px;margin-bottom:18px;max-width:100%">Hands-on melt processing is a core skill behind our composite work: polymers are compounded on a twin-screw extruder, prepared as masterbatches and injection molded into test specimens, so that processing conditions can be traced through to the properties we measure.</p>
+        <div class="ml-grid">
+          <article class="ml-card">
+            <h4>Twin-Screw Extrusion Compounding</h4>
+            <p>Melt mixing of polymer blends and of fiber- and nanoparticle-filled composites (MABS/VDT with SEBS-g-MAH compatibilizer, basalt fibers), with temperature profile, screw speed and feed rate set for good dispersion without degrading the matrix.</p>
+          </article>
+          <article class="ml-card">
+            <h4>Masterbatch Preparation</h4>
+            <p>Concentrated masterbatches of fillers, fibers and additives compounded on the twin-screw extruder, then let down with neat polymer to accurate target loadings, giving consistent dispersion across a composition series.</p>
+          </article>
+          <article class="ml-card">
+            <h4>Injection Molding</h4>
+            <p>Standard tensile, impact and DMA specimens molded under controlled melt temperature, injection and packing pressure and mold temperature, so property changes can be traced back to formulation and processing.</p>
+          </article>
+        </div>
+      </div>
       <div class="ml-focus" id="ml-research">
         <h3 style="font-size:24px;margin-bottom:10px">Machine Learning Research</h3>
         <p class="sec-lead" style="font-size:15px;margin-bottom:18px;max-width:100%">Data-driven modeling is an active research direction in our lab, connecting experimental datasets with predictive design and optimization.</p>
@@ -832,98 +855,107 @@
   <!-- TEAM -->
   <section id="team">
     <div class="wrap">
-      <h2 class="sec-title">Thesis Groups</h2>
-      <p class="sec-lead">Current IUT undergraduate thesis groups supervised in machine learning, polymer composites, thermodynamics-informed modeling, metamaterials, and nanocomposite characterization.</p>
+      <h2 class="sec-title">Thesis Students</h2>
+      <p class="sec-lead">IUT undergraduate thesis groups supervised in machine learning, polymer composites, thermodynamics-informed modeling, metamaterials, and nanocomposite characterization.</p>
+      <h3 class="grad-head">Graduated thesis students <span>Class of 2026</span></h3>
+      <p class="grad-note">These groups completed their B.Sc. theses in September–October 2026. Open a thesis to read the full work.</p>
       <div class="team-grid">
 
         <article class="member">
           <div class="avatar">1</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Mechanical Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Mechanical Engineering</div>
             <h3>Thermodynamics GNN – Liquid Density</h3>
-            <p class="project"><strong>Topic:</strong> Temperature-dependent liquid density prediction by bridging data-driven graph neural networks with physics constraints.</p>
+            <p class="project"><strong>Thesis:</strong> Thermodynamics-Informed Graph Neural Network for Temperature-Dependent Liquid Density Prediction: Bridging the Gap Between Data and Physics</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>MSH</span><img src="images/team/muttkia.png" alt="Muttakia Sarah Hossain" onerror="this.remove()"></div><figcaption>Muttakia Sarah Hossain</figcaption></figure>
             </div>
+            <a class="doc-link" href="theses/2026_Hossain_TI-GNN_Liquid_Density.pdf" target="_blank" rel="noopener"><span class="doc-icon">PDF</span> Read the thesis</a>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">2</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Mechanical Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Mechanical Engineering</div>
             <h3>FDM Mechanical Property ML</h3>
             <p class="project"><strong>Topic:</strong> Data-driven modeling and experimental validation of mechanical-property prediction in FDM using machine learning.</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>AAJ</span><img src="images/team/abu%20Jubair.png" alt="Abu Ahmed Jobayer" onerror="this.remove()"></div><figcaption>Abu Ahmed Jobayer</figcaption></figure>
             </div>
+            <span class="doc-link pending">Thesis PDF to be added</span>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">3</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Industrial and Production Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Industrial and Production Engineering</div>
             <h3>Skin Permeability ML (RDKit)</h3>
             <p class="project"><strong>Topic:</strong> RDKit-integrated machine-learning framework for predicting skin permeability from molecular structure.</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>MAS</span><img src="images/team/md-adnan-sami.png" alt="MD. Adnan Sami" onerror="this.remove()"></div><figcaption>MD. Adnan Sami</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>TZ</span><img src="images/team/tasfia%20ipe.png" alt="Tasfia Zaman" onerror="this.remove()"></div><figcaption>Tasfia Zaman</figcaption></figure>
             </div>
+            <span class="doc-link pending">Thesis PDF to be added</span>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">4</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Mechanical Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Mechanical Engineering</div>
             <h3>FDM PLA Tensile Strength ML</h3>
-            <p class="project"><strong>Topic:</strong> Predictive modeling of tensile strength in FDM-printed PLA and PLA-CF composites through hybrid machine learning.</p>
+            <p class="project"><strong>Thesis:</strong> Predictive Modeling of Tensile Strength in FDM-Printed PLA Composites via Hybrid Machine Learning</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>MRJ</span><img src="images/team/joutho.png" alt="Mubasshir Rahib Joutha" onerror="this.remove()"></div><figcaption>Mubasshir Rahib Joutha</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>NMR</span><img src="images/team/nabil-mahmood-rahman.jpg" alt="Nabil Mahmood Rahman" onerror="this.remove()"></div><figcaption>Nabil Mahmood Rahman</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>AN</span><img src="images/team/abdullah-nomaan.jpg" alt="Abdullah Nomaan" onerror="this.remove()"></div><figcaption>Abdullah Nomaan</figcaption></figure>
             </div>
+            <a class="doc-link" href="theses/2026_Rahman_Nomaan_FDM_PLA_Tensile_ML.pdf" target="_blank" rel="noopener"><span class="doc-icon">PDF</span> Read the thesis</a>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">5</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Industrial and Production Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Industrial and Production Engineering</div>
             <h3>Phononic Metamaterials Design</h3>
-            <p class="project"><strong>Topic:</strong> Reproducible and verifiable autonomous design of Hermitian and non-Hermitian phononic metamaterials.</p>
+            <p class="project"><strong>Thesis:</strong> Numerical Fidelity and Decision Robustness in Preregistered Inverse Design of Kekulé Phononic Crystals</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>GMK</span><img src="images/team/kassaf.jpeg" alt="Galib Muhammad Kassaf" onerror="this.remove()"></div><figcaption>Galib Muhammad Kassaf</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>SS</span><img src="images/team/safrat-samia.jpg" alt="Safrat Samia" onerror="this.remove()"></div><figcaption>Safrat Samia</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>MTO</span><img src="images/team/Oyeshi.jpeg" alt="Mehnaz Tamanna Oyeshi" onerror="this.remove()"></div><figcaption>Mehnaz Tamanna Oyeshi</figcaption></figure>
             </div>
+            <a class="doc-link" href="theses/2026_Kassaf_Samia_Oyeshi_Kekule_Phononic_Crystals.pdf" target="_blank" rel="noopener"><span class="doc-icon">PDF</span> Read the thesis</a>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">6</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Mechanical Engineering</div>
-            <h3>Polymer Nanocomposites ML Opt.</h3>
-            <p class="project"><strong>Topic:</strong> Machine-learning-driven optimization of polymer nanocomposites for heat-exchanger applications.</p>
+            <div class="role-tag">Graduated 2026 · B.Sc. Mechanical Engineering</div>
+            <h3>Polymer Composites ML Screening</h3>
+            <p class="project"><strong>Thesis:</strong> Thermal Conductivity and Mechanical Properties of Polymer Composites: A Leakage-Aware, Interpretable Machine Learning Framework with Uncertainty-Guided Screening</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>JRF</span><img src="images/team/Zunaid.jpeg" alt="Junaid Rahman Fahim" onerror="this.remove()"></div><figcaption>Junaid Rahman Fahim</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>TC</span><img src="images/team/tasfia%20me.png" alt="Tasfia Chowdhury" onerror="this.remove()"></div><figcaption>Tasfia Chowdhury</figcaption></figure>
             </div>
+            <a class="doc-link" href="theses/2026_Fahim_Chowdhury_Polymer_Composites_ML.pdf" target="_blank" rel="noopener"><span class="doc-icon">PDF</span> Read the thesis</a>
           </div>
         </article>
 
         <article class="member">
           <div class="avatar">7</div>
           <div class="body">
-            <div class="role-tag">B.Sc. Thesis · Mechanical Engineering</div>
+            <div class="role-tag">Graduated 2026 · B.Sc. Mechanical Engineering</div>
             <h3>NiFe-LDH Wood Epoxy Nanocomposite</h3>
-            <p class="project"><strong>Topic:</strong> Effect of NiFe-LDH loading on mechanical, dynamic mechanical, and thermal properties of wood-flour-reinforced epoxy hybrid nanocomposites.</p>
+            <p class="project"><strong>Thesis:</strong> Effect of NiFe-LDH Loading on the Mechanical, Vibration Damping and Thermal Behaviour of Wood Flour Reinforced Epoxy Hybrid Composites</p>
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>JMA</span><img src="images/team/aninda.JPEG" alt="Juhair Mahatab Ullah Aninda" onerror="this.remove()"></div><figcaption>Juhair Mahatab Ullah Aninda</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>NA</span><img src="images/team/wafi.png" alt="Nafis Ayman" onerror="this.remove()"></div><figcaption>Nafis Ayman</figcaption></figure>
             </div>
+            <a class="doc-link" href="theses/2026_Aninda_Ayman_NiFe-LDH_Wood_Epoxy.pdf" target="_blank" rel="noopener"><span class="doc-icon">PDF</span> Read the thesis</a>
           </div>
         </article>
 
@@ -991,8 +1023,8 @@
             <div class="skill"><strong>Documentation</strong>LaTeX · Origin Pro · Visio</div>
             <div class="skill"><strong>Microscopy</strong>LOM · SEM · STEM</div>
             <div class="skill"><strong>Characterization</strong>DMA · DSC · TGA · X-ray CT · Rheology</div>
-            <div class="skill"><strong>Fabrication</strong>Injection · Twin-screw · VARI · FDM</div>
-            <div class="skill"><strong>Methods</strong>Six Sigma (Black Belt) · DfAM</div>
+            <div class="skill"><strong>Polymer Processing</strong>Twin-screw compounding · Masterbatch preparation · Injection molding</div>
+            <div class="skill"><strong>Fabrication &amp; Methods</strong>VARI · FDM · DfAM · Six Sigma (Black Belt)</div>
           </div>
         </div>
       </div>
@@ -1012,7 +1044,7 @@
   <section id="contact">
     <div class="wrap">
       <h2 class="sec-title">Contact</h2>
-      <p class="sec-lead">Open to research collaborations, industry consulting on composites and FEA, invited talks, and graduate-student inquiries. Email is the fastest way to reach me.</p>
+      <p class="sec-lead">Open to research collaborations, industry consulting on composites, polymer processing and FEA, invited talks, and graduate-student inquiries. Email is the fastest way to reach me.</p>
 
       <div class="contact-wrap">
         <div class="contact-info">
