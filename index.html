@@ -4,9 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Sujon Lab | Composite Materials &amp; Mechanics at IUT</title>
-<meta name="description" content="Dr. Md. Abu Shaid Sujon — Assistant Professor, Department of Mechanical and Production Engineering, Islamic University of Technology. Research on advanced composites, vibration damping, and sustainable manufacturing." />
+<meta name="description" content="Dr. Md. Abu Shaid Sujon — Assistant Professor, Department of Mechanical and Production Engineering, Islamic University of Technology. Research on polymer composites, vibration damping, additive manufacturing and biofabrication, and machine learning for materials." />
 <meta property="og:title" content="Sujon Lab | Composite Materials & Mechanics" />
-<meta property="og:description" content="Research on composites, damping, simulation, and machine learning at IUT by Dr. Md. Abu Shaid Sujon." />
+<meta property="og:description" content="Research on polymer composites, damping, additive manufacturing, biofabrication and machine learning at IUT by Dr. Md. Abu Shaid Sujon." />
 <meta property="og:image" content="images/Dr Sujon.png" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -250,9 +250,11 @@
   .sec-lead{font-size:17.5px;color:var(--body);max-width:72ch;margin-bottom:40px;line-height:1.65}
 
   /* ================= RESEARCH AREAS (4-card grid, Doudna pattern) ================= */
-  .research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-  @media (max-width:1020px){ .research-grid{grid-template-columns:1fr 1fr} }
-  @media (max-width:620px){ .research-grid{grid-template-columns:1fr} }
+  /* Flex, not grid, so an odd last row (5 cards = 3 + 2) sits centred */
+  .research-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+  .research-grid > .rcard{flex:0 0 calc((100% - 48px) / 3)}
+  @media (max-width:1020px){ .research-grid > .rcard{flex-basis:calc((100% - 24px) / 2)} }
+  @media (max-width:620px){ .research-grid > .rcard{flex-basis:100%} }
   .rcard{
     background:#fff;border:1px solid var(--rule);border-radius:3px;overflow:hidden;
     display:flex;flex-direction:column;
@@ -260,7 +262,8 @@
   }
   .rcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(21,45,74,.4)}
   .rcard .thumb{
-    aspect-ratio:16/9;position:relative;overflow:hidden;
+    /* match the card artwork (885x400) so its title text is not cropped */
+    aspect-ratio:885/400;position:relative;overflow:hidden;
     background:var(--navy);
   }
   .rcard .thumb img{
@@ -375,8 +378,8 @@
   .pub.hidden{display:none}
 
   /* ================= TEACHING ================= */
-  .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:10px}
-  @media (max-width:900px){ .courses{grid-template-columns:1fr 1fr} }
+  .courses{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px}
+  @media (max-width:1020px){ .courses{grid-template-columns:1fr 1fr} }
   @media (max-width:600px){ .courses{grid-template-columns:1fr} }
   .course{
     background:#fff;border:1px solid var(--rule);border-left:4px solid var(--accent);
@@ -696,7 +699,7 @@
   <section id="research">
     <div class="wrap">
       <h2 class="sec-title">Research Areas</h2>
-      <p class="sec-lead">We work across four overlapping threads in materials and mechanics — with a consistent bias toward problems that must also hold up in a factory, a classroom, and a peer-reviewed paper.</p>
+      <p class="sec-lead">We work across five overlapping threads in materials and mechanics — with a consistent bias toward problems that must also hold up in a factory, a classroom, and a peer-reviewed paper.</p>
 
       <div class="research-grid">
         <!-- Card 1 -->
@@ -718,7 +721,7 @@
           </div>
           <div class="body">
             <h3>Natural &amp; Hybrid Composites</h3>
-            <p>Mechanical and moisture behavior of jute/carbon epoxy hybrids — stacking sequence, orientation, tensile, flexural and water-absorption response.</p>
+            <p>Jute/carbon epoxy hybrids, densified wood fiber composites and graphene/wood-flour epoxy nanocomposites — stacking sequence, moisture, impact and thermal response.</p>
             <a class="more" href="#publications">Selected work →</a>
           </div>
         </article>
@@ -743,6 +746,18 @@
           <div class="body">
             <h3>Sustainable Materials &amp; LCA</h3>
             <p>Low-carbon and bio-based feedstocks, life-cycle analysis coursework, and transferring composite methods into sustainable cementitious materials research.</p>
+            <a class="more" href="#publications">Selected work →</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="rcard">
+          <div class="thumb">
+            <img src="research area/additive biofabrication.svg" alt="3D-printed porous scaffold with a magnified view of its pore structure" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Additive Manufacturing &amp; Biofabrication</h3>
+            <p>3D-printed and biofabricated scaffolds for bone tissue engineering, and the surface quality of parts made by tomographic volumetric printing.</p>
             <a class="more" href="#publications">Selected work →</a>
           </div>
         </article>
@@ -774,7 +789,7 @@
       <div class="about-col" style="max-width:920px">
         <h2 class="sec-title">About Me</h2>
         <p>The Sujon Lab welcomes undergraduate researchers, capstone teams, and graduate students interested in mechanical and materials engineering — regardless of background, gender, or prior experience. We believe excellence in engineering is built through hands-on practice and diverse perspectives.</p>
-        <p>Our work bridges industry practice and teaching. Techniques from pharmaceutical equipment design (Novo Nordisk) and hearing-aid polymer research (GN, Demant, WSA) are translated into student labs, capstone projects, and peer-reviewed research with real-world relevance.</p>
+        <p>Our work bridges industry practice and teaching. Experience from injection-device design at Novo Nordisk and hearing-aid polymer research (GN, Demant, WSA) is translated into student labs, capstone projects, and peer-reviewed research with real-world relevance.</p>
         <p>I focus on turning advanced composite-material methods into practical impact through student research, industry collaboration, and robust experimental-to-simulation workflows.</p>
 
         <dl class="bio-facts">
@@ -881,7 +896,7 @@
             <div class="member-photos">
               <figure class="student-photo"><div class="photo"><span>GMK</span><img src="images/team/kassaf.jpeg" alt="Galib Muhammad Kassaf" onerror="this.remove()"></div><figcaption>Galib Muhammad Kassaf</figcaption></figure>
               <figure class="student-photo"><div class="photo"><span>SS</span><img src="images/team/safrat-samia.jpg" alt="Safrat Samia" onerror="this.remove()"></div><figcaption>Safrat Samia</figcaption></figure>
-              <figure class="student-photo"><div class="photo"><span>MTO</span><img src="images/team/Mehu.jpeg" alt="Mehnaz Tamanna Oyeshi" onerror="this.remove()"></div><figcaption>Mehnaz Tamanna Oyeshi</figcaption></figure>
+              <figure class="student-photo"><div class="photo"><span>MTO</span><img src="images/team/Oyeshi.jpeg" alt="Mehnaz Tamanna Oyeshi" onerror="this.remove()"></div><figcaption>Mehnaz Tamanna Oyeshi</figcaption></figure>
             </div>
           </div>
         </article>
@@ -920,15 +935,13 @@
   <section id="teaching">
     <div class="wrap">
       <h2 class="sec-title">Teaching</h2>
-      <p class="sec-lead">Undergraduate and graduate courses at the Department of Mechanical and Production Engineering, with active-learning formats and hands-on FEA labs in MATLAB and Abaqus.</p>
+      <p class="sec-lead">Materials engineering and composites courses in the Department of Mechanical and Production Engineering, taught live from interactive lecture pages, with outcome-based assessment and supervised capstone and thesis projects.</p>
 
       <div class="courses">
-        <div class="course"><div class="ccode">ME · 4101</div><h4>Statics and Dynamics</h4><p>Stress, strain, beam bending and torsion — with an Abaqus lab connecting analytical solutions to meshed reality.</p></div>
-        <div class="course"><div class="ccode">ME · 4403</div><h4>Mechanics of Machine</h4><p>Shafts, fasteners, bearings and gears — project-based CAD/FEA simulation and prototype testing.</p></div>
-        <div class="course"><div class="ccode">ME · 4325</div><h4>Materials Engineering</h4><p>Crystal structure to failure mechanisms, SEM reading sessions, ISO fatigue standards and AM cases.</p></div>
-        <div class="course"><div class="ccode">IPE · 4817</div><h4>Light Structure and Composite</h4><p>Thin-walled and sandwich structures — buckling, torsion, and energy methods for aerospace efficiency.</p></div>
-        <div class="course"><div class="ccode">MPE · 452</div><h4>Composite Materials</h4><p>Layup, lamination theory, VARI manufacturing and damage mechanics — with a capstone fabrication project.</p></div>
-        <div class="course"><div class="ccode">MPE · 101</div><h4>Engineering Statics</h4><p>Free-body diagrams, equilibrium, trusses — problem-based modules with weekly studio hours.</p></div>
+        <div class="course"><div class="ccode">ME · 4325</div><h4>Material Engineering</h4><p>For mechanical engineering students — structure and properties of engineering materials, phase diagrams and the iron–carbon system, and composite materials.</p></div>
+        <div class="course"><div class="ccode">ME · 4225</div><h4>Material Engineering</h4><p>The same core for industrial and production engineering students, from crystal structure and phase diagrams to the selection of engineering materials.</p></div>
+        <div class="course"><div class="ccode">ME · 4226</div><h4>Material Engineering Lab</h4><p>The laboratory course paired with ME 4225: hands-on testing and characterization of engineering materials.</p></div>
+        <div class="course"><div class="ccode">IPE · 4817</div><h4>Light Structures and Composite Materials</h4><p>Thin-walled and sandwich structures — buckling, torsion, and energy methods for aerospace efficiency.</p></div>
       </div>
     </div>
   </section>
@@ -938,14 +951,16 @@
     <div class="wrap">
       <h2 class="sec-title">Experience &amp; Education</h2>
       <ul class="exp-list">
-        <li class="exp-item"><div class="exp-when">2025 — Present</div><div><h3 class="exp-role">Assistant Professor</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Dhaka, Bangladesh</div><p class="exp-desc">Teaching Mechanics of Materials, Machine Design, Composite Materials. Chair of Solid Mechanics curriculum committee. Secured $50k departmental grant for composites lab.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2024</div><div><h3 class="exp-role">Mechanical Design Engineer</h3><div class="exp-where"><span class="loc">Novo Nordisk</span> · Bagsværd, Denmark</div><p class="exp-desc">Designed and optimized pharmaceutical production equipment in SolidWorks, CATIA and Abaqus. Led continuous-improvement projects for reliability and sustainability.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2021 — 2024</div><div><h3 class="exp-role">Ph.D. Fellow</h3><div class="exp-where"><span class="loc">Technical University of Denmark</span> · Lyngby, Denmark</div><p class="exp-desc">Composite and thermoplastic materials for acoustic damping. Funded by GN, Demant and WS Audiology. Thesis: development of new composites and their industrial processing to improve acoustic properties.</p></div></li>
-        <li class="exp-item"><div class="exp-when">Jan – Apr 2023</div><div><h3 class="exp-role">Visiting Research Scholar</h3><div class="exp-where"><span class="loc">UMass Lowell</span> — Plastic Engineering, MA, USA</div><p class="exp-desc">Fiber-matrix composites for cementitious materials. TGA, DMA, tensile/impact testing, rheology and X-ray CT characterization.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2018 — 2020</div><div><h3 class="exp-role">M.Sc. Mechanical &amp; Production Eng.</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · CGPA 4.00/4.00</div><p class="exp-desc">Thesis: analysis of mechanical properties of jute and carbon fiber reinforced epoxy hybrid composite.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2017 — 2020</div><div><h3 class="exp-role">Research Assistant</h3><div class="exp-where"><span class="loc">Technical University of Denmark</span></div><p class="exp-desc">Foundations in mechanical engineering and materials science supporting advanced cementitious-materials research.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2016 — 2020</div><div><h3 class="exp-role">Lecturer</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Dhaka, BD</div><p class="exp-desc">Core engineering courses and student research supervision — the pedagogical foundation I return to now as faculty.</p></div></li>
-        <li class="exp-item"><div class="exp-when">2011 — 2015</div><div><h3 class="exp-role">B.Sc. Mechanical &amp; Chemical Eng.</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · CGPA 3.87/4.00</div><p class="exp-desc">Thesis: experimental investigation of LPG as an alternative to R134a in a domestic refrigerator.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Aug 2025 — Present</div><div><h3 class="exp-role">Assistant Professor</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Gazipur, Bangladesh</div><p class="exp-desc">Leads a research group on polymer composites, additive manufacturing and biofabrication, and machine-learning-assisted materials modeling. Teaches Material Engineering (ME 4325, ME 4225) and Light Structures and Composite Materials (IPE 4817). Leads outcome-based education (OBE) implementation for the department, with BAETE-aligned course files and CO–PO attainment tools. Secured a $50k departmental grant for the composites lab.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Nov 2024 — Jul 2025</div><div><h3 class="exp-role">Lecturer</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Gazipur, Bangladesh</div><p class="exp-desc">Rejoined IUT after the Ph.D.; taught core mechanical engineering and materials courses and started thesis supervision in composites and machine-learning-assisted materials research.</p></div></li>
+        <li class="exp-item"><div class="exp-when">May — Nov 2024</div><div><h3 class="exp-role">Mechanical Design Engineer</h3><div class="exp-where"><span class="loc">Novo Nordisk</span> · Denmark</div><p class="exp-desc">Designed a single-shot prefilled syringe for a new drug product, developed design modifications for existing injection devices including NovoPen and FlexPen, and helped troubleshoot their manufacturing processes.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Jan 2021 — Apr 2024</div><div><h3 class="exp-role">Ph.D. Fellow</h3><div class="exp-where"><span class="loc">Technical University of Denmark</span> · Kongens Lyngby, Denmark</div><p class="exp-desc">Polymer blends and fiber-reinforced composites for vibration damping (MABS/VDT with SEBS-g-MAH, basalt-fiber MABS), from twin-screw compounding and injection molding to DMA, DSC, SEM and mechanical testing. Industrial project funded by GN, Demant and WS Audiology. Thesis: development of novel polymer matrix composites and their processing for enhanced damping.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Jan — Apr 2023</div><div><h3 class="exp-role">Visiting Research Scholar</h3><div class="exp-where"><span class="loc">UMass Lowell</span> — Plastics Engineering, MA, USA</div><p class="exp-desc">Hosted by Dr. Davide Masato. Basalt-fiber-reinforced MABS composites for combined mechanical and damping performance, leading to a joint paper in <em>Composites Science and Technology</em>.</p></div></li>
+        <li class="exp-item"><div class="exp-when">2018 — 2020</div><div><h3 class="exp-role">M.Sc. Engg. (Mechanical)</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · CGPA 4.00/4.00</div><p class="exp-desc">Thesis: analysis of mechanical properties of jute and carbon fiber reinforced epoxy hybrid composite.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Sep 2017 — Dec 2020</div><div><h3 class="exp-role">Lecturer</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Gazipur, Bangladesh</div><p class="exp-desc">Taught core mechanical engineering courses and laboratories; research on jute/carbon hybrid composites published in <em>J. Materials Research and Technology</em>, <em>Key Engineering Materials</em> and <em>IJMET</em>.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Apr — Sep 2017</div><div><h3 class="exp-role">Lecturer</h3><div class="exp-where"><span class="loc">Bangladesh Army University of Science and Technology (BAUST)</span> · Saidpur</div><p class="exp-desc">Taught undergraduate mechanical engineering courses and supervised student projects.</p></div></li>
+        <li class="exp-item"><div class="exp-when">Jan 2016 — Mar 2017</div><div><h3 class="exp-role">Lecturer</h3><div class="exp-where"><span class="loc">Bangladesh Army University of Engineering and Technology (BAUET)</span></div><p class="exp-desc">Taught undergraduate mechanical engineering courses and laboratories.</p></div></li>
+        <li class="exp-item"><div class="exp-when">2011 — 2015</div><div><h3 class="exp-role">B.Sc. Engg. (Mechanical)</h3><div class="exp-where"><span class="loc">Islamic University of Technology</span> · Dept. of Mechanical and Chemical Engineering · CGPA 3.87/4.00</div><p class="exp-desc">Thesis: experimental investigation of LPG as an alternative to R134a in a domestic refrigerator.</p></div></li>
       </ul>
     </div>
   </section>
@@ -975,7 +990,7 @@
             <div class="skill"><strong>Programming</strong>Python · MATLAB</div>
             <div class="skill"><strong>Documentation</strong>LaTeX · Origin Pro · Visio</div>
             <div class="skill"><strong>Microscopy</strong>LOM · SEM · STEM</div>
-            <div class="skill"><strong>Characterization</strong>DMA · TGA · X-ray CT · Rheology</div>
+            <div class="skill"><strong>Characterization</strong>DMA · DSC · TGA · X-ray CT · Rheology</div>
             <div class="skill"><strong>Fabrication</strong>Injection · Twin-screw · VARI · FDM</div>
             <div class="skill"><strong>Methods</strong>Six Sigma (Black Belt) · DfAM</div>
           </div>
@@ -1034,15 +1049,18 @@
     <div class="wrap">
       <h2 class="sec-title">News</h2>
       <ul class="news-list" style="max-height:none;border-right:none;padding-right:0">
-        <li class="news-item"><div class="news-date">April 2026</div><p>New paper in preparation on <strong>basalt-fiber MABS</strong> hybrids — building on <em>Compos. Sci. Technol.</em> 2024.</p></li>
+        <li class="news-item"><div class="news-date">September 2026</div><p>Review published in <em>Biomedical Materials</em> on <strong>3D-printed and biofabricated scaffolds for bone tissue engineering</strong>, written with collaborators at DTU and ETH Zürich.</p></li>
+        <li class="news-item"><div class="news-date">April 2026</div><p>Paper published in <em>Composites Part C: Open Access</em> on how <strong>wood densification</strong> changes the mechanical and thermal properties of graphene/wood-flour/epoxy nanocomposites.</p></li>
+        <li class="news-item"><div class="news-date">March 2026</div><p>Paper published in <em>Industrial Crops and Products</em> on <strong>densified wood fiber composites</strong> with a bioinspired hierarchical architecture for impact resistance.</p></li>
+        <li class="news-item"><div class="news-date">February 2026</div><p>Paper published in <em>Flow Measurement and Instrumentation</em> on <strong>hydraulic ram pump</strong> design optimized with an ANN–RSM ensemble machine-learning model.</p></li>
         <li class="news-item"><div class="news-date">February 2026</div><p>Secured a <strong>$50,000 departmental grant</strong> to equip the IUT composites lab with a high-resolution DIC system and advanced 3D printer.</p></li>
-        <li class="news-item"><div class="news-date">December 2025</div><p>Led the inaugural <strong>IUT Capstone Project Showcase</strong> — 20 student teams, 10 industry judges, 150+ attendees.</p></li>
-        <li class="news-item"><div class="news-date">November 2025</div><p>Chaired the Solid Mechanics curriculum committee, integrating ISO fatigue standards and AM case studies.</p></li>
         <li class="news-item"><div class="news-date">August 2025</div><p>Joined the Islamic University of Technology as <strong>Assistant Professor</strong> in the Department of Mechanical and Production Engineering.</p></li>
-        <li class="news-item"><div class="news-date">April 2024</div><p><strong>Ph.D. defense:</strong> Development of new composites and their industrial processing to improve acoustic properties — Technical University of Denmark.</p></li>
-        <li class="news-item"><div class="news-date">February 2024</div><p>Paper published in <em>Composites Science and Technology</em> on MABS composites reinforced with basalt fibers.</p></li>
+        <li class="news-item"><div class="news-date">November 2024</div><p>Rejoined IUT as <strong>Lecturer</strong> in the Department of Mechanical and Production Engineering.</p></li>
+        <li class="news-item"><div class="news-date">May 2024</div><p>Joined <strong>Novo Nordisk</strong>, Denmark, as Mechanical Design Engineer, working on injection-device design.</p></li>
+        <li class="news-item"><div class="news-date">April 2024</div><p><strong>Ph.D. defense:</strong> Development of novel polymer matrix composites and their processing for enhanced damping — Technical University of Denmark.</p></li>
+        <li class="news-item"><div class="news-date">March 2024</div><p>Paper published in <em>Composites Science and Technology</em> on MABS composites reinforced with basalt fibers.</p></li>
         <li class="news-item"><div class="news-date">May 2023</div><p>Received the <strong>Otto Mønsted Foundation Award</strong> (7,500 DKK) for presentation at the 38th PPS Conference, St. Gallen.</p></li>
-        <li class="news-item"><div class="news-date">January 2023</div><p>Visiting Research Scholar at <strong>UMass Lowell</strong>, Plastic Engineering Dept. — fiber-matrix composites for cementitious materials.</p></li>
+        <li class="news-item"><div class="news-date">January 2023</div><p>Visiting Research Scholar at <strong>UMass Lowell</strong>, Plastics Engineering Dept., hosted by Dr. Davide Masato — basalt-fiber-reinforced MABS composites.</p></li>
         <li class="news-item"><div class="news-date">January 2021</div><p>Began Ph.D. at DTU, funded by <strong>GN, Demant and WS Audiology</strong> — selected from 125 international candidates.</p></li>
       </ul>
     </div>
@@ -1059,6 +1077,7 @@
       <div class="affil-pill">Technical University of Denmark</div>
       <div class="affil-pill">Novo Nordisk</div>
       <div class="affil-pill">UMass Lowell</div>
+      <div class="affil-pill">ETH Zürich</div>
       <div class="affil-pill">GN · Demant · WS Audiology</div>
     </div>
   </div>
@@ -1077,23 +1096,30 @@
 </footer>
 
 <script>
+/* Source of truth: own-bib.bib in the CV (14 journal articles, 7 conference papers).
+   Order within a year is kept as listed here; the list is sorted by year on render. */
 const PUBS = [
-  { type:"journal", year:2026, title:"Impact of Wood Densification on the Mechanical and Thermal properties of Graphene/Wood flour/Epoxy Nanocomposites", authors:"S. R. Chowdhury, T. B. Afsar, H. R. Hamim, M. A. Habib, M. Nasim, M. A. S. Sujon", venue:"Composites Part C: Open Access, 100725", doi:"", link:"https://www.sciencedirect.com/science/article/pii/S2666682026000319" },
-  { type:"journal", year:2026, title:"Mechanical characterization of densified wood fiber composites for enhanced impact resistance through a bioinspired hierarchical architecture", authors:"A. Amin, M. A. Hossain, M. A. Habib, M. A. S. Sujon, M. Nasim, M. A. Rahman", venue:"Industrial Crops and Products, 243, 123099", doi:"", link:"https://www.sciencedirect.com/science/article/pii/S0926669026004863" },
-  { type:"journal", year:2026, title:"Experimentation of hydraulic ram pump and multi-objective optimization of design parameters using ANN-RSM enhanced ensemble machine learning model", authors:"N. M. Nizhum, F. H. Choudhury, M. M. S. Al Forkan, M. A. S. Sujon, M. M. Ehsan", venue:"Flow Measurement and Instrumentation, 103257", doi:"", link:"https://www.sciencedirect.com/science/article/abs/pii/S0955598626000713" },
-  { type:"conf", year:2025, title:"Enhancement of Vibration Damping and Viscoelastic Properties of MABS Through Novel Polymer Blends with VDT and SEBS-g-MAH Compatibilizer", authors:"A. Islam, M. A. S. Sujon", venue:"40th International Conference of the Polymer Processing Society", doi:"" },
-  { type:"journal", year:2024, title:"Novel approach for optimizing mechanical and damping performance of MABS composites reinforced with basalt fibers: an experimental study", authors:"M. A. S. Sujon, D. Masato, T. Andriollo, et al.", venue:"Composites Science and Technology, Vol. 251, 110578", doi:"10.1016/j.compscitech.2024.110578" },
-  { type:"journal", year:2023, title:"Enhancing vibration damping properties of MABS/VDT blends using SEBS-g-MAH as a compatibilizer", authors:"M. A. S. Sujon et al.", venue:"Journal of Polymer Research, Vol. 30, No. 12", doi:"10.1007/s10965-023-03819-y" },
+  { type:"review", year:2026, title:"Advances in 3D-printed and biofabricated scaffolds for bone tissue engineering: materials, fabrication and biological integration", authors:"M. A. S. Sujon, B. Wang, H. R. Hamim, M. Nasim, M. A. Habib, A. Islam", venue:"Biomedical Materials, 21(5), 052002", doi:"10.1088/1748-605X/ae99be" },
+  { type:"journal", year:2026, title:"Impact of wood densification on the mechanical and thermal properties of graphene/wood flour/epoxy nanocomposites", authors:"S. R. Chowdhury, T. B. Afsar, H. R. Hamim, M. A. Habib, M. Nasim, M. A. S. Sujon", venue:"Composites Part C: Open Access, 20, 100725", doi:"10.1016/j.jcomc.2026.100725" },
+  { type:"journal", year:2026, title:"Mechanical characterization of densified wood fiber composites for enhanced impact resistance through a bioinspired hierarchical architecture", authors:"A. Amin, M. A. Hossain, M. A. Habib, M. A. S. Sujon, M. Nasim, M. A. Rahman", venue:"Industrial Crops and Products, 243, 123099", doi:"10.1016/j.indcrop.2026.123099" },
+  { type:"journal", year:2026, title:"Experimentation of hydraulic ram pump and multi-objective optimization of design parameters using ANN-RSM enhanced ensemble machine learning model", authors:"N. M. Nizhum, F. H. Choudhury, M. M. S. Al Forkan, M. A. S. Sujon, M. M. Ehsan", venue:"Flow Measurement and Instrumentation, 109, 103257", doi:"10.1016/j.flowmeasinst.2026.103257" },
+  { type:"conf", year:2025, title:"Enhancement of vibration damping and viscoelastic properties of MABS through novel polymer blends with VDT and SEBS-g-MAH compatibilizer", authors:"A. Islam, M. A. S. Sujon", venue:"40th International Conference of the Polymer Processing Society (PPS-40)", doi:"" },
+  { type:"journal", year:2024, title:"Novel approach for optimizing mechanical and damping performance of MABS composites reinforced with basalt fibers: an experimental study", authors:"M. A. S. Sujon, D. Masato, T. Andriollo, Z. Pan, V. K. Nadimpalli, V. Cutanda Henriquez, A. Islam", venue:"Composites Science and Technology, 251, 110578", doi:"10.1016/j.compscitech.2024.110578" },
+  { type:"conf", year:2024, title:"Surface roughness of the parts produced by Tomographic Volumetric Printing (TVP) process", authors:"M. A. S. Sujon, B. Wang, D. Quagliotti, A. Islam", venue:"CIRP Winter Meeting, STC-S", doi:"" },
+  { type:"journal", year:2023, title:"Enhancing vibration damping properties of MABS/VDT blends using SEBS-g-MAH as a compatibilizer", authors:"M. A. S. Sujon, T. Andriollo, A. Islam", venue:"Journal of Polymer Research, 30(12), 440", doi:"10.1007/s10965-023-03819-y" },
   { type:"journal", year:2023, title:"Enhancement of viscoelastic property of MABS processed by melt compounding and injection molding", authors:"M. A. S. Sujon, J. Madsen, J. d. C. Christiansen, A. Islam", venue:"Journal of Applied Polymer Science, 140(2), e53309", doi:"10.1002/app.53309" },
-  { type:"review", year:2021, title:"Damping and sound absorption properties of polymer matrix composites: a review", authors:"M. A. Shaid Sujon, A. Islam, V. K. Nadimpalli", venue:"Polymer Testing, Vol. 104, 107388", doi:"10.1016/j.polymertesting.2021.107388" },
-  { type:"journal", year:2020, title:"Comparative analysis of refrigerant performance between LPG and R134a under subtropical climate", authors:"R. H. Ahmad, A. A. Bhuiyan, F. Xu, et al.", venue:"J. Thermal Analysis and Calorimetry, 139(4), 2925–2935", doi:"10.1007/s10973-019-09126-3" },
-  { type:"journal", year:2020, title:"Experimental and numerical investigation on the tensile and water-absorption behavior of jute/carbon reinforced epoxy composite", authors:"A. S. Sujon, N. Mehfuz, M. A. Habib", venue:"IJMET, 11(2), 130–140", doi:"" },
-  { type:"journal", year:2020, title:"Fabrication and experimental investigation on tensile and flexural properties for different stacking sequence of jute and carbon fiber reinforced epoxy composite", authors:"A. S. Sujon, T. H. Supto, F. Shariar, et al.", venue:"Key Engineering Materials, 858, 72–77", doi:"10.4028/www.scientific.net/KEM.858.72" },
-  { type:"journal", year:2020, title:"Experimental investigation of the mechanical and water-absorption properties on fiber stacking sequence and orientation of jute/carbon epoxy hybrid composites", authors:"M. A. S. Sujon, M. A. Habib, M. Z. Abedin", venue:"J. Materials Research and Technology, 9(5), 10970–10981", doi:"10.1016/j.jmrt.2020.07.079" },
-  { type:"journal", year:2019, title:"Fabrication, experimental investigation of jute fiber reinforced epoxy composites and hybrid composites", authors:"T. M. Aranno, M. A. S. Sujon, S. Mia, et al.", venue:"IOP Conf. Ser.: Materials Science and Engineering, 628, 012011", doi:"10.1088/1757-899X/628/1/012011" },
-  { type:"conf", year:2023, title:"Effects of SEBS-g-MAH addition on the vibration damping and mechanical properties of MABS/VDT blend", authors:"M. A. S. Sujon, I. T. Merino, T. S. Quaade, T. Andriollo, A. Islam", venue:"38th Int. Conf. Polymer Processing Society, St. Gallen", doi:"" },
-  { type:"conf", year:2019, title:"Fabrication and experimental investigation on tensile and flexural properties for different stacking sequence of jute and carbon fiber reinforced epoxy composite", authors:"M. A. S. Sujon, T. H. Supto, F. Shariar, et al.", venue:"3rd Int. Conf. on Composite Material, Polymer Science and Engineering, Bangkok", doi:"" },
-  { type:"conf", year:2017, title:"Characteristics and performance test of LPG and R134a refrigerant in terms of power consumption with cost-effective analysis", authors:"M. A. S. Sujon, R. H. Ahmed, A. S. Islam, S. S. Yusuf", venue:"ICMIME 2017, Paper 85", doi:"" }
+  { type:"conf", year:2023, title:"Effects of SEBS-g-MAH addition on the vibration damping and mechanical properties of MABS/VDT blend", authors:"M. A. S. Sujon, I. Trueba Merino, T. S. Quaade, T. Andriollo, A. Islam", venue:"38th International Conference of the Polymer Processing Society (PPS-38), St. Gallen, Switzerland", doi:"" },
+  { type:"review", year:2021, title:"Damping and sound absorption properties of polymer matrix composites: a review", authors:"M. A. S. Sujon, A. Islam, V. K. Nadimpalli", venue:"Polymer Testing, 104, 107388", doi:"10.1016/j.polymertesting.2021.107388" },
+  { type:"journal", year:2020, title:"Experimental investigation of the mechanical and water absorption properties on fiber stacking sequence and orientation of jute/carbon epoxy hybrid composites", authors:"M. A. S. Sujon, M. A. Habib, M. Z. Abedin", venue:"Journal of Materials Research and Technology, 9(5), 10970–10981", doi:"10.1016/j.jmrt.2020.07.079" },
+  { type:"journal", year:2020, title:"Comparative analysis of refrigerant performance between LPG and R134a under subtropical climate", authors:"R. H. Ahmad, A. A. Bhuiyan, F. Xu, M. A. S. Sujon, M. R. Karim, E. H. Moin, A. K. M. S. Islam", venue:"Journal of Thermal Analysis and Calorimetry, 139(4), 2925–2935", doi:"10.1007/s10973-019-09126-3" },
+  { type:"journal", year:2020, title:"Experimental and numerical investigation on the tensile and water absorption behavior of jute/carbon reinforced epoxy composite", authors:"M. A. S. Sujon, N. Mehfuz, M. A. Habib", venue:"International Journal of Mechanical Engineering and Technology, 11(2), 130–140", doi:"10.34218/ijmet.11.2.2020.012" },
+  { type:"journal", year:2020, title:"Fabrication and experimental investigation on tensile and flexural properties for different stacking sequence of jute and carbon fiber reinforced epoxy composite", authors:"M. A. S. Sujon, T. H. Supto, F. Shariar, M. M. R. Pallab, M. Z. Abedin, M. A. Habib", venue:"Key Engineering Materials, 858, 72–77", doi:"10.4028/www.scientific.net/KEM.858.72" },
+  { type:"journal", year:2020, title:"Time domain approach to identify the system properties of a couple structure", authors:"N. Mehfuz, M. A. S. Sujon", venue:"International Journal of Scientific &amp; Engineering Research, 11(3), 243–250", doi:"" },
+  { type:"journal", year:2019, title:"Fabrication, experimental investigation of jute fiber reinforced epoxy composites and hybrid composites", authors:"T. M. Aranno, M. A. S. Sujon, S. Mia, M. S. U. Khan, M. A. M. Hasan, N. S. Supto", venue:"IOP Conference Series: Materials Science and Engineering, 628, 012011", doi:"10.1088/1757-899X/628/1/012011" },
+  { type:"conf", year:2019, title:"Fabrication and experimental investigation on tensile and flexural properties for different stacking sequence of jute and carbon fiber reinforced epoxy composite", authors:"M. A. S. Sujon, T. H. Supto, F. Shariar, M. M. R. Pallab, M. Z. Abedin, M. A. Habib", venue:"3rd International Conference on Composite Material, Polymer Science and Engineering, Bangkok, Thailand", doi:"" },
+  { type:"conf", year:2017, title:"Study of power consumption characteristics of LPG and R134a in a vapor compression refrigeration system", authors:"M. A. S. Sujon, R. H. Ahmed, A. K. M. S. Islam, S. S. Yusuf", venue:"ICMIME 2017, RUET, Rajshahi, Bangladesh (Paper TE-85)", doi:"" },
+  { type:"conf", year:2017, title:"Approximation techniques of stress concentration factor of double notched plate", authors:"M. S. Ferdous, M. R. Islam, M. H. Ali, M. A. S. Sujon, S. S. Yusuf, M. R. Sarkar, R. I. Rubel", venue:"ICMIME 2017, RUET, Rajshahi, Bangladesh (Paper MS-82)", doi:"" },
+  { type:"conf", year:2017, title:"Design, construction, and performance test of a portable solar photovoltaic water pumping system for irrigation and household water supply", authors:"S. S. Yusuf, M. S. Islam, R. I. Rubel, M. A. S. Sujon, M. R. A. Beg", venue:"ICMIME 2017, RUET, Rajshahi, Bangladesh (Paper ET-83)", doi:"" }
 ];
 
 function highlightMe(authors){
